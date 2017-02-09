@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.androidnetworking.AndroidNetworking;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Initialize Fast Android Networking library
+        AndroidNetworking.initialize(getApplicationContext());
     }
 
     @Override

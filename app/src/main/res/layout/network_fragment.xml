@@ -4,6 +4,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0000">
+    android:gravity="center_horizontal"
+    android:background="#eeeeee">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#222222"
+        android:text="Networking with Fast Android Networking" />
+
+    <Button
+        android:id="@+id/make_get_request_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Make GET request"/>
+
+    <Button
+        android:id="@+id/download_file_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Download File"/>
 
 </LinearLayout>
