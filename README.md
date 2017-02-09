@@ -4,14 +4,18 @@
 **an·droid** - an open-source operating system used for smartphones and tablet computers
 
 #### Libraries Used
-* Networking - [Fast-Android-Networking](https://github.com/amitshekhariitbhu/Fast-Android-Networking) 
+**Networking** - [Fast-Android-Networking](https://github.com/amitshekhariitbhu/Fast-Android-Networking) 
 
-      compile 'com.amitshekhar.android:android-networking:0.4.0'
+````
+compile 'com.amitshekhar.android:android-networking:0.4.0'
+````
 
-* Image Loading - [Glide](https://github.com/bumptech/glide)
+**Image Loading** - [Glide](https://github.com/bumptech/glide)
  
-      compile 'com.github.bumptech.glide:glide:3.7.0'
-      compile 'com.android.support:support-v4:19.1.0' 
+```` 
+compile 'com.github.bumptech.glide:glide:3.7.0'
+compile 'com.android.support:support-v4:19.1.0' 
+```` 
 
 #### Android Manifest Permissions
 
