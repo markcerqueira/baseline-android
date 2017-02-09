@@ -3,6 +3,7 @@ package gg.mark.baselineandroid;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,12 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.DownloadListener;
 import com.androidnetworking.interfaces.DownloadProgressListener;
 import com.androidnetworking.interfaces.OkHttpResponseListener;
+import com.androidnetworking.interfaces.ParsedRequestListener;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
 
 import okhttp3.Response;
 
@@ -73,6 +80,42 @@ public class NetworkFragment extends Fragment {
             }
         });
 
+        rootView.findViewById(R.id.get_and_json_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AndroidNetworking.get("https://jsonplaceholder.typicode.com/posts")
+                        .setTag("get_and_json_button")
+                        .build()
+                        .getAsObjectList(Post.class, new ParsedRequestListener<List<Post>>() {
+                            @Override
+                            public void onResponse(List<Post> posts) {
+                                Snackbar.make(rootView, "onResponse - got " + posts.size() + " posts", Snackbar.LENGTH_SHORT).show();
+                                Log.d("NetworkFragment", posts.get(0).title);
+                            }
+
+                            @Override
+                            public void onError(ANError anError) {
+                                Snackbar.make(rootView, "onError", Snackbar.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
         return rootView;
+    }
+
+    // Inner classes have to be static to work with Jackson!
+    // See more: http://www.cowtowncoder.com/blog/archives/2010/08/entry_411.html
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Post {
+        @JsonProperty Integer userId;
+        @JsonProperty Integer id;
+        @JsonProperty String title;
+        @JsonProperty String body;
+
+        @JsonCreator
+        public Post() {
+
+        }
     }
 }
