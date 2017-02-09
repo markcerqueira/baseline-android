@@ -85,11 +85,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     private static final String NETWORKING_FRAGMENT_TAG = "NETWORKING_FRAGMENT_TAG";
+    private static final String IMAGE_LOADING_FRAGMENT_TAG = "IMAGE_LOADING_FRAGMENT_TAG";
 
     private static final Set<String> sFragmentTagsSet;
     static {
         sFragmentTagsSet = new HashSet<>();
         sFragmentTagsSet.add(NETWORKING_FRAGMENT_TAG);
+        sFragmentTagsSet.add(IMAGE_LOADING_FRAGMENT_TAG);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -100,16 +102,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.networking) {
             showFragment(new NetworkFragment(), NETWORKING_FRAGMENT_TAG);
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.image_loading) {
+            showFragment(new ImageLoadingFragment(), IMAGE_LOADING_FRAGMENT_TAG);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

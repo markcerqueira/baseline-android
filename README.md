@@ -4,7 +4,14 @@
 **an·droid** - an open-source operating system used for smartphones and tablet computers
 
 #### Libraries Used
-* Networking - [Fast-Android-Networking](https://github.com/amitshekhariitbhu/Fast-Android-Networking) - `compile 'com.amitshekhar.android:android-networking:0.4.0'`
+* Networking - [Fast-Android-Networking](https://github.com/amitshekhariitbhu/Fast-Android-Networking) 
+
+      compile 'com.amitshekhar.android:android-networking:0.4.0'
+
+* Image Loading - [Glide](https://github.com/bumptech/glide)
+ 
+      compile 'com.github.bumptech.glide:glide:3.7.0'
+      compile 'com.android.support:support-v4:19.1.0' 
 
 #### Android Manifest Permissions
 
@@ -17,3 +24,4 @@ If you're using all of the above libraries here are all the permissions to add t
 
 #### Notes
 * Skeleton project created using Android Studio's "Navigation Drawer Activity" template
+* API requests hit [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
