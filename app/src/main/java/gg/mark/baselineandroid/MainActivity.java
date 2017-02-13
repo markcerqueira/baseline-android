@@ -88,12 +88,14 @@ public class MainActivity extends AppCompatActivity
 
     private static final String NETWORKING_FRAGMENT_TAG = "NETWORKING_FRAGMENT_TAG";
     private static final String IMAGE_LOADING_FRAGMENT_TAG = "IMAGE_LOADING_FRAGMENT_TAG";
+    private static final String LIST_VIEW_DEMO_FRAGMENT_TAG = "LIST_VIEW_DEMO_FRAGMENT_TAG";
 
     private static final Set<String> sFragmentTagsSet;
     static {
         sFragmentTagsSet = new HashSet<>();
         sFragmentTagsSet.add(NETWORKING_FRAGMENT_TAG);
         sFragmentTagsSet.add(IMAGE_LOADING_FRAGMENT_TAG);
+        sFragmentTagsSet.add(LIST_VIEW_DEMO_FRAGMENT_TAG);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -106,6 +108,8 @@ public class MainActivity extends AppCompatActivity
             showFragment(new NetworkFragment(), NETWORKING_FRAGMENT_TAG);
         } else if (id == R.id.image_loading) {
             showFragment(new ImageLoadingFragment(), IMAGE_LOADING_FRAGMENT_TAG);
+        } else if (id == R.id.list_view_demo) {
+            showFragment(new ListViewDemoFragment(), LIST_VIEW_DEMO_FRAGMENT_TAG);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

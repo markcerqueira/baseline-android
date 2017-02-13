@@ -38,7 +38,6 @@ If you're using all of the above libraries here are all the permissions to add t
 * API requests hit [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 #### Todos
-* Network request of images into scrolling ListView
 * [Epoxy](https://github.com/airbnb/epoxy)
 * Logging library
 * [Android Annotations](https://github.com/androidannotations/androidannotations)

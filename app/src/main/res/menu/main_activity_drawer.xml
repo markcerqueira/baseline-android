@@ -14,4 +14,13 @@
         </menu>
     </item>
 
+    <item android:title="Lists">
+        <menu>
+            <item
+                android:id="@+id/list_view_demo"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="ListView"/>
+        </menu>
+    </item>
+
 </menu>
